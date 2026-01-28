@@ -10,6 +10,20 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script>
+      (function () {
+        if (!location.search.includes('v=')) {
+          location.replace(location.pathname + '?v=1');
+        }
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(function (regs) {
+            regs.forEach(function (reg) {
+              reg.unregister();
+            });
+          });
+        }
+      })();
+    </script>
     <title>Playful Learning | Summer Engineering Program</title>
     <script type="module" crossorigin src="/playful-learning/assets/index-DT-kTe-B.js"></script>
     <link rel="stylesheet" crossorigin href="/playful-learning/assets/index-vJGt8dtM.css">
